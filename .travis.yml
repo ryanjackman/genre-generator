@@ -1,10 +1,21 @@
 language: node_js
 node_js:
-  - "node"
+- node
+
+before_script:
+  - npm install
+script:
+  - npm run build
+  - npm run test
 
 deploy:
   provider: s3
-  access_key_id: AKIAJGGJL5C6JHUBSMZA
+  access_key_id: AKIAIWLZ5FFXLLJ4OZYQ
   secret_access_key:
-    secure: GEQ0IPuP6VrtipotdDBF4S675ujgpV9iuWcHXn/1qB5fidy53QBNISgWePKpuQpC1XT4I87e0oadJA4shrM6W4O1QVAgdSxa1AUOasF5T+iMniFLLBccsDJtkiAgv0Bex+84ZPoC+Kd7iFnL7UkC69E3QVm/jf2fWxgGO3G61lcj0XLKSY1jwc2K8tPO5uc2+MESajodYZy9a7fVABXCXUesa8lE2lILPxS2XH1VkV3mH+86XGKHBV+aWbXk9/iT5gqWOlel2uNpoMGPT+XXiWLmgCYo3zmMxJ4e467+jqwtlq0p3Dy3q7gFH5R158TBkdsLrLUK80hBHZA8rbdBOK3OGnyg8Ie96NxYSKrW4IN2pBiapfKYCzax+z9sWcYRBnw57qzO+7XYj4cf4/3rVJ7gSqRL6LMbXziQmwXI29z3h+KsnhQIm+u3agGijvLeAfhU8Cs0kK8xWpAMzxun9aAQo0fPoo8zRYUvi2aXW+fUF2yrnuVr8a/dbqQBXAaqvhjD81zn17L1YT155PHbAkq4iBDIynIuDU+FellxoZOr+Eq+y2nGA+QdYpEciznJ/rwVHwuU533XFe32m1/JsbXFpyTd8I4ilT9mrK6kdzJ3vrFHFLvBJtzCDoPvxutI4Q1M3C9yxLkvzxpmzZ+phehQSIW5PKOZKAAHDnZuCVc=
+    secure: X5u1zdwxelIMaiKQZwxPBJzea2c2o6etDFWg31jME9BWNpU+k7O0n8AKGeq3oljgZGFp6oXyJVVxw9vo3HKiCaGXF2Tqso4unqpaMewlhEGGA2rhO3hSE3Tyeom10xJB2mLHy6MUVZG9DqIzFomRyU53pZ2nHSgCmjw3XVM1gmNWgnew90EA/9Dx2S4DuWVYZPVQoNDIMKeaA3dmpJrIVNVwhTYe8W7xY9v34/RHxZRt6qCwyEk/v9aTArFWPGvAEyOCQ+3ci7817Sd9eZhdV49W+jSWfGm5xiZ9G/77n8IEh9So68Oi7O2YgFDw4KgMxCbyDtJvE1qzpAQjxJf8Ho8t7VJq8u23WxQq5EC50v1Oi7VCn6KF6E8pKuKg8vhEXKbvy3T19KOMZmWzCCSUB7gT0xpVy9u9+H6O01ZD7YRcuUe819OZn6P1qQfWGn84brjETAMXzWGFWG82YB/P8uidsVcM1R7Sk5Q0J9a6yXF/GEdJDhMxvy1VYljRjT88QRPd9kPLA9MGwpiEFWQ8hqkkHS1GUmyGFp6gBk5VeU2AK+JXX06SBTo/3CXcHocwHwTQpXiJa8mPEMfRReIuNUYq/twSAVH5c+1lHOqvOtT5Th4egSSRCt5nBCOAIz00Yjlayu2CJ596QPtgUiLhoibWBOE7f5lhwQ+QayGG2JA=
   bucket: music-genre-generator
+  acl: public-read
+  on:
+    repo: ryanjackman/genre-generator
+  local_dir: build
+  skip_cleanup: true
