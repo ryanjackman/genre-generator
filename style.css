@@ -1,0 +1,16 @@
+body {
+	font-family: 'Roboto', sans-serif;
+
+    not-background-color: #bddfea;
+    max-width: 900px;
+    margin: 50 auto;
+    text-align: center;
+}
+
+p {
+	font-size: 1.5em;
+}
+
+h1 {
+	font-size: 3em;
+}
