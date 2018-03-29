@@ -17,5 +17,5 @@ deploy:
   acl: public-read
   on:
     repo: ryanjackman/genre-generator
-  local_dir: build
+  local_dir: dist
   skip_cleanup: true
