@@ -1,9 +1,8 @@
 body {
 	font-family: 'Roboto', sans-serif;
 
-    not-background-color: #bddfea;
     max-width: 900px;
-    margin: 50 auto;
+    margin: 50px auto;
     text-align: center;
 }
 
@@ -13,4 +12,20 @@ p {
 
 h1 {
 	font-size: 3em;
+}
+
+.generate {
+    font-size: 1em;
+    border: 0;
+    margin: 0 6px;
+    padding: 0.7em;
+    cursor: pointer;
+    text-align: center;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    border-radius: 5px;
+}
+.generate:hover,
+.generate:focus {
+    opacity: 0.8;
 }
